@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="499.99994"
+   height="433.51251"
+   viewBox="0 0 499.99994 433.51251"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath54">
+      <path
+         d="M 0,0 H 1562.5 V 1356.25 H 0 Z"
+         clip-rule="evenodd"
+         id="path52" />
+    </clipPath>
+  </defs>
+  <g
+     id="g10"
+     transform="matrix(0.31999998,0,0,0.31999998,-170.89569,-30.214247)">
+    <g
+       id="g48"
+       transform="translate(534.04908,93.657755)">
+      <g
+         id="g50"
+         clip-path="url(#clipPath54)">
+        <g
+           id="g56"
+           transform="matrix(3.9934061,0,0,3.9980128,0,0.76177007)">
+          <path
+             d="M 195.63,109.83 H 132.22 L 0,338.85001 h 190.23 l 37.11,-64.28 -26.31,-45.55001 -5.4,-9.36 -5.4,9.36 -31.71,54.90999 H 95.120003 Z"
+             style="fill:#6DC400;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path58" />
+          <path
+             d="M 391.26999,338.85001 293.45001,169.42 195.63,0 163.92999,54.919998 178.52,80.190002 195.63,109.83 l 17.4,30.13001 83.11999,143.96998 17.11002,29.64002 14.59998,25.28 z"
+             style="fill:#272926;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path60" />
+          <path
+             d="M 195.63,109.83 146.39,135.84 43.779999,313.57001 95.120003,283.92999 Z"
+             style="fill:#559B00;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path62" />
+          <path
+             d="M 43.779999,313.57001 0,338.85001 h 188.3 l -13.71,-25.28 z"
+             style="fill:#559B00;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path64" />
+          <path
+             d="m 158.52,283.92999 16.07,29.64002 16.48001,-29.64002 6.5,-11.69 L 195.63,219.66 Z"
+             style="fill:#559B00;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path66" />
+          <path
+             d="m 213.03,139.96001 83.11999,143.96998 17.11002,29.64002 14.59998,25.28 h 63.41 l -43.78,-25.28 L 195.63,50.549999 163.92999,54.919998 178.52,80.190002 195.63,109.83 Z"
+             style="fill:#1F211E;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path68" />
+          <path
+             d="M 195.63,50.549999 V 0 l -31.70001,54.919998 z"
+             style="fill:#343732;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path70" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
