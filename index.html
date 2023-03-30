@@ -10,12 +10,34 @@
   body, html {
   height: 100%;
   margin: 0;
-  background-image: linear-gradient(to right bottom, 
-    rgb(223, 56, 142), 
-    rgb(241, 55, 114), 
-    rgb(250, 69, 84), 
-    rgb(248, 91, 52), 
-    rgb(238, 115, 0));
+  background-image: linear-gradient(to top, #82c23a, #30b653, #00a76d, #009784, #008594, #00719d);
+}
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('noise.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: 0.9;
+  visibility: visible;
+}
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
 }
 .stripe {
   width: 75px;
@@ -27,12 +49,16 @@
     rgb(146, 151, 76) 40% 60%, 
     rgb(100, 115, 97) 60% 80%, 
     rgb(93, 85, 90) 80%);
-    border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  z-index: 1000;
+  position: relative;
 }
 .content {
   max-width: 500px;
   margin: auto;
   text-align: center;
+  z-index: 1000;
+  position: relative;
 }
 </style>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -42,6 +68,7 @@
 </head>
 
 <body>
+<div class="bg"></div>
 <div class="content">
   <br/><br/><br/><br/>
   <p><img src = "g49.svg" width="250" alt="A118 Hero"/></p>
@@ -51,7 +78,5 @@
   <br/><br/><br/><br/>
   <p class="stripe"></p>
 </div>
-
-
 </body>
 </html>
