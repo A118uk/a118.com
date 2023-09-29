@@ -10,7 +10,9 @@
   body, html {
   height: 100%;
   margin: 0;
-  background-image: linear-gradient(to top, #82c23a, #30b653, #00a76d, #009784, #008594, #00719d);
+  background-image: url("s18.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .bg {
   position: fixed;
@@ -20,10 +22,10 @@
   bottom: -50%;
   width: 200%;
   height: 200vh;
-  background: transparent url('noise.png') repeat 0 0;
+  background: transparent url('n23.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .2s infinite;
-  opacity: 0.9;
+  opacity: .7;
   visibility: visible;
 }
 @keyframes bg-animation {
@@ -60,6 +62,9 @@
   z-index: 1000;
   position: relative;
 }
+img {
+  opacity: 0.2;
+}
 </style>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -71,8 +76,8 @@
 <div class="bg"></div>
 <div class="content">
   <br/><br/><br/><br/>
-  <p><img src = "g49.svg" width="250" alt="A118 Hero"/></p>
-  <p style = "font-family: 'Tomorrow', sans-serif; font-size: 5em; line-height: 0%; color: rgb(45, 46, 49);">
+  <p><img src="g49.svg" width="250" alt="A118 Hero"/></p>
+  <p style="font-family: 'Tomorrow', sans-serif; font-size: 5em; line-height: 0%; color: black; opacity: 0.6;">
     A118
   </p>
   <br/><br/><br/><br/>
