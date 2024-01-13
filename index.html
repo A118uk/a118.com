@@ -6,39 +6,46 @@
 <meta name="robots" content="noarchive"/>
 <title>A118</title>
 <style>
-  body, html {
+/** Montserrat-Alt1 Light **/
+@font-face {
+    font-family: "Montserrat-Alt1";
+    font-weight: 300;
+    font-style: normal;
+    src: url("MontserratAlt1-Light.woff2") format("woff2"),
+         url("MontserratAlt1-Light.woff") format("woff");
+}
+body, html {
   height: 100%;
   margin: 0;
-  background-image: url("y78.webp");
+  background-color: rgb(39, 39, 41);
   background-repeat: no-repeat;
   background-size: cover;
 }
-.bg {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200vh;
-  background: transparent url('n23.png') repeat 0 0;
-  background-repeat: repeat;
-  animation: bg-animation .2s infinite;
-  opacity: .7;
-  visibility: visible;
+div.hero {
+  font-size: 12em;
+  color: rgb(240, 240, 240);
+  font-family: 'Montserrat-Alt1', sans-serif;
+  font-weight: 300;
+  opacity: .6;
+  letter-spacing: -0.1em;
+  display: inline;
 }
-@keyframes bg-animation {
-    0% { transform: translate(0,0) }
-    10% { transform: translate(-5%,-5%) }
-    20% { transform: translate(-10%,5%) }
-    30% { transform: translate(5%,-10%) }
-    40% { transform: translate(-5%,15%) }
-    50% { transform: translate(-10%,5%) }
-    60% { transform: translate(15%,0) }
-    70% { transform: translate(0,10%) }
-    80% { transform: translate(-15%,0) }
-    90% { transform: translate(10%,5%) }
-    100% { transform: translate(5%,0) }
+div.herosm {
+  font-size: 8em;
+  color: rgb(240, 240, 240);
+  font-family: 'Montserrat-Alt1', sans-serif;
+  font-weight: 300;
+  opacity: .4;
+  letter-spacing: -0.1em;
+  display: inline;
+}
+.bg {
+  background: transparent url('n67.webp') no-repeat 0 0;
+  background-position: center center;
+  background-attachment: fixed;
+  visibility: visible;
+  height: 100%;
+  background-size: cover;
 }
 .stripe {
   width: 75px;
@@ -55,14 +62,11 @@
   position: relative;
 }
 .content {
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
   text-align: center;
   z-index: 1000;
   position: relative;
-}
-img {
-  opacity: 0.2;
 }
 </style>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -72,12 +76,12 @@ img {
 </head>
 
 <body>
-<div class="bg"></div>
+<div class="bg">
 <div class="content">
   <br/><br/><br/><br/>
-  <p><img src="g49.svg" width="250" alt="A118 Hero"/></p>
+  <p><div class="hero">A</div><div class="herosm">118</div></p>
   <br/><br/><br/><br/>
   <p class="stripe"></p>
-</div>
+</div></div>
 </body>
 </html>
