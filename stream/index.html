@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A118 · Live Stream</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* =================================================================
+       Base tokens
+       ================================================================= */
+    :root {
+      --c-orange:     rgb(238, 115, 0);
+      --c-amber:      rgb(247, 165, 27);
+      --c-olive:      rgb(146, 151, 76);
+      --c-sage:       rgb(100, 115, 97);
+      --c-mauve:      rgb(93,  85,  90);
+      --c-surface-0:  rgb(4, 4, 6);
+      --c-surface-1:  rgb(18, 18, 20);
+      --c-surface-2:  rgba(28, 28, 31, 0.72);
+      --c-surface-3:  rgba(22, 22, 24, 0.82);
+      --c-text-hi:    rgb(210, 210, 215);
+      --c-text-mid:   rgb(190, 190, 195);
+      --c-text-low:   rgb(90, 90, 100);
+      --c-text-dim:   rgb(55, 55, 65);
+
+      --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      --font-ui:      -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      --font-mono:    'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      font-family: var(--font-ui);
+      color: var(--c-text-mid);
+      background-color: rgb(39, 39, 41);
+      line-height: 1.55;
+    }
+
+    /* Fixed parallax background */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: transparent url('n67.webp') no-repeat center center;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* Dark overlay */
+    .overlay {
+      position: relative;
+      background: rgba(22, 22, 24, 0.82);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* =================================================================
+       Logo stripe — identity element
+       ================================================================= */
+    .stripe-logo {
+      width: 10px;
+      height: 52px;
+      background-image: linear-gradient(to bottom,
+        var(--c-orange) 20%,
+        var(--c-amber)  20% 40%,
+        var(--c-olive)  40% 60%,
+        var(--c-sage)   60% 80%,
+        var(--c-mauve)  80%);
+      border-radius: 0.25rem;
+      flex-shrink: 0;
+    }
+    .stripe-logo.horizontal {
+      width: 52px;
+      height: 10px;
+      background-image: linear-gradient(to right,
+        var(--c-orange) 20%,
+        var(--c-amber)  20% 40%,
+        var(--c-olive)  40% 60%,
+        var(--c-sage)   60% 80%,
+        var(--c-mauve)  80%);
+    }
+
+    /* Top accent stripe on the stream frame */
+    .stripe-h {
+      height: 3px;
+      border-radius: 2px;
+      background-image: linear-gradient(to right,
+        var(--c-orange) 20%,
+        var(--c-amber)  20% 40%,
+        var(--c-olive)  40% 60%,
+        var(--c-sage)   60% 80%,
+        var(--c-mauve)  80%);
+      flex-shrink: 0;
+    }
+
+    /* =================================================================
+       Main content — stream fills remaining viewport height
+       ================================================================= */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 1.5rem 1rem;
+      max-width: 1800px;
+      width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    /* Stream container — expand to fill all available vertical space */
+    .stream-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: var(--c-surface-0);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 0.4rem;
+      overflow: hidden;
+      /* Soft orange glow to frame the content */
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(238, 115, 0, 0.06);
+    }
+
+    /* Thin accent stripe across the top of the stream card */
+    .stream-stripe {
+      height: 3px;
+      flex-shrink: 0;
+      background-image: linear-gradient(to right,
+        var(--c-orange) 20%,
+        var(--c-amber)  20% 40%,
+        var(--c-olive)  40% 60%,
+        var(--c-sage)   60% 80%,
+        var(--c-mauve)  80%);
+    }
+
+    /* iframe wrapper — always 16:9 but expands to fill the card */
+    .stream-frame {
+      flex: 1;
+      position: relative;
+      background: var(--c-surface-0);
+    }
+
+    .stream-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* =================================================================
+       Responsive
+       ================================================================= */
+    @media (max-width: 760px) {
+      .main { padding: 0.75rem 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <div class="overlay">
+
+    <!-- Stream -->
+    <main class="main">
+      <div class="stream-container">
+        <div class="stream-stripe" aria-hidden="true"></div>
+        <div class="stream-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/XK5dEO1IVsI"
+            title="A118 Live Stream"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>
