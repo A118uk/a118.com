@@ -116,10 +116,9 @@
 
     /* Stream container — locked to 16:9, never taller than the viewport */
     .stream-container {
-      width: 100%;
+      width: min(100%, calc((100vh - 2rem) * 16 / 9));
       aspect-ratio: 16 / 9;
-      max-height: calc(100vh - 2rem);
-      align-self: center;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       background: var(--c-surface-0);
