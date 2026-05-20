@@ -100,22 +100,26 @@
     }
 
     /* =================================================================
-       Main content — stream fills remaining viewport height
+       Main content — centred, full viewport
        ================================================================= */
     .main {
       flex: 1;
       display: flex;
       flex-direction: column;
-      padding: 1rem 1.5rem 1rem;
+      justify-content: center;
+      padding: 1rem 1.5rem;
       max-width: 1800px;
       width: 100%;
       margin: 0 auto;
       box-sizing: border-box;
     }
 
-    /* Stream container — expand to fill all available vertical space */
+    /* Stream container — locked to 16:9, never taller than the viewport */
     .stream-container {
-      flex: 1;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: calc(100vh - 2rem);
+      align-self: center;
       display: flex;
       flex-direction: column;
       background: var(--c-surface-0);
@@ -138,9 +142,10 @@
         var(--c-mauve)  80%);
     }
 
-    /* iframe wrapper — always 16:9 but expands to fill the card */
+    /* iframe wrapper — fills the card below the stripe */
     .stream-frame {
       flex: 1;
+      min-height: 0;
       position: relative;
       background: var(--c-surface-0);
     }
