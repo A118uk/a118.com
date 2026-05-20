@@ -114,10 +114,9 @@
       box-sizing: border-box;
     }
 
-    /* Stream container — locked to 16:9, never taller than the viewport */
+    /* Stream container — width-constrained, height wraps content */
     .stream-container {
       width: min(100%, calc((100vh - 2rem) * 16 / 9));
-      aspect-ratio: 16 / 9;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -141,10 +140,10 @@
         var(--c-mauve)  80%);
     }
 
-    /* iframe wrapper — fills the card below the stripe */
+    /* iframe wrapper — exactly 16:9, no black bars */
     .stream-frame {
-      flex: 1;
-      min-height: 0;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       position: relative;
       background: var(--c-surface-0);
     }
