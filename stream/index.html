@@ -176,7 +176,7 @@
         <div class="stream-stripe" aria-hidden="true"></div>
         <div class="stream-frame">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/948jE_0zgLQ?autoplay=1&mute=1"
+            id="stream-iframe"
             title="A118 Live Stream"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
@@ -187,5 +187,10 @@
     </main>
 
   </div>
+  <script src="stream.js"></script>
+  <script>
+    document.getElementById('stream-iframe').src =
+      `https://www.youtube-nocookie.com/embed/${STREAM_VIDEO_ID}`;
+  </script>
 </body>
 </html>
