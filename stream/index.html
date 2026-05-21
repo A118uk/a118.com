@@ -187,10 +187,18 @@
     </main>
 
   </div>
-  <script src="stream.js"></script>
   <script>
-    document.getElementById('stream-iframe').src =
-      `https://www.youtube-nocookie.com/embed/${STREAM_VIDEO_ID}?autoplay=1&mute=1`;
+    // Fetch stream.js with a timestamp query string to bypass browser caching,
+    // then extract the video ID and set the iframe src.
+    fetch('stream.js?_=' + Date.now())
+      .then(r => r.text())
+      .then(text => {
+        const match = text.match(/STREAM_VIDEO_ID\s*=\s*"([^"]+)"/);
+        if (match) {
+          document.getElementById('stream-iframe').src =
+            `https://www.youtube-nocookie.com/embed/${match[1]}?autoplay=1&mute=1`;
+        }
+      });
   </script>
 </body>
 </html>
